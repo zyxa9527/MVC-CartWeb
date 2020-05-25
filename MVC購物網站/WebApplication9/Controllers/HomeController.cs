@@ -11,16 +11,16 @@ namespace WebApplication9.Controllers
         public ActionResult Index()
         {
             ViewBag.ResultMessage = TempData["ResultMessage"];
-            try
-            {
-                string loginName = Session["LoginName"].ToString();
-                ViewBag.Message = "當前登入使用者：" + loginName;
-            }
-            catch
-            {
-                TempData["ResultMessage"] = "請先登入";
-                return RedirectToAction("Index", "Login");
-            }
+            //try
+            //{
+            //    string loginName = Session["LoginName"].ToString();
+            //    ViewBag.Message = "當前登入使用者：" + loginName;
+            //}
+            //catch
+            //{
+            //    TempData["ResultMessage"] = "請先登入";
+            //    return RedirectToAction("Index", "Login");
+            //}
             using (Models.CartsEntities db = new Models.CartsEntities())
             {
                 var result = (from s in db.Products select s).ToList();

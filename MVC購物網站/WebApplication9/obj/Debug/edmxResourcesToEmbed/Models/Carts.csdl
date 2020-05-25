@@ -9,21 +9,22 @@
       <End Role="OrderDetail" EntitySet="OrderDetails" />
     </AssociationSet>
     <EntitySet Name="ProductComments" EntityType="CartsModel.ProductComment" />
+    <EntitySet Name="Users" EntityType="CartsModel.User" />
   </EntityContainer>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Description" Type="String" Nullable="true" />
-    <Property Name="CategoryId" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CategoryId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
-    <Property Name="PublishDate" Type="DateTime" Nullable="false" />
+    <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
-    <Property Name="DefaultImageId" Type="String" Nullable="false" />
+    <Property Name="DefaultImageId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="DefaultImageURL" Type="String" Nullable="true" />
+    <Property Name="DefaultImageURL" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -31,10 +32,10 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="OrderDetails" Relationship="CartsModel.OrderOrderDetail" FromRole="Order" ToRole="OrderDetail" />
-    <Property Name="UserId" Type="String" Nullable="false" />
-    <Property Name="RecieverName" Type="String" Nullable="false" />
-    <Property Name="RecieverPhone" Type="String" Nullable="false" />
-    <Property Name="RecieverAddress" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RecieverName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RecieverPhone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RecieverAddress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
@@ -43,9 +44,9 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="Order" Relationship="CartsModel.OrderOrderDetail" FromRole="OrderDetail" ToRole="Order" />
     <Property Name="OrderId" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Price" Type="String" Nullable="false" />
-    <Property Name="Quantity" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Quantity" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <Association Name="OrderOrderDetail">
     <End Type="CartsModel.Order" Role="Order" Multiplicity="1" />
@@ -64,9 +65,16 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserId" Type="String" Nullable="false" />
-    <Property Name="Content" Type="String" Nullable="false" />
-    <Property Name="CreateDate" Type="String" Nullable="false" />
-    <Property Name="ProductId" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreateDate" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ProductId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userpassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

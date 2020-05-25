@@ -29,5 +29,6 @@ namespace WebApplication9.Models
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<ProductComment> ProductComments { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

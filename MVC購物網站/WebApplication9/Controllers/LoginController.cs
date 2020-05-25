@@ -20,43 +20,69 @@ namespace WebApplication9.Controllers
        [HttpPost]
         public ActionResult Login(Models.User postback)
         {
-            
             try
             {
-                if (Db.CheckUserData(postback.Name, postback.Password))
+                using (Models.CartsEntities db = new Models.CartsEntities())
                 {
-                    Session["LoginName"] = postback.Name;
-                    Session["LoginPassword"] = postback.Password;
-                    TempData["ResultMessage"] = String.Format("{0}登入成功!!" , postback.Name);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    TempData["ResultMessage"] = "帳號或密碼錯誤";
-                    return RedirectToAction("Index","Login");
+                    var result = (from s in db.Users
+                                  where s.username == postback.username
+                                  select s).FirstOrDefault();
+
+                    if (result.userpassword  == postback.userpassword)
+                    {
+                        Session["LoginName"] = postback.username;
+                        Session["LoginPassword"] = postback.userpassword;
+                        TempData["ResultMessage"] = String.Format("{0}登入成功!!" , postback.username);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        TempData["ResultMessage"] = "帳號或密碼錯誤";
+                        return RedirectToAction("Index", "Login");
+                    }
                 }
             }
-            catch
-            {
+            catch  {
                 return RedirectToAction("Index", "Login");
-                
             }
+        }
+            //try
+            //{
+            //    if (Db.CheckUserData(postback.Name, postback.Password))
+            //    {
+            //        Session["LoginName"] = postback.Name;
+            //        Session["LoginPassword"] = postback.Password;
+            //        TempData["ResultMessage"] = String.Format("{0}登入成功!!" , postback.Name);
+            //        return RedirectToAction("Index", "Home");
+            //    }
+            //    else
+            //    {
+            //        TempData["ResultMessage"] = "帳號或密碼錯誤";
+            //        return RedirectToAction("Index","Login");
+            //    }
+            //}
+            //catch
+            //{
+            //    return RedirectToAction("Index", "Login");
+                
+            //}
 
         }
             /// <summary>
             /// 登出
             /// </summary>
-            public ActionResult Logout()
-        {
-            Session.Abandon();
-            return RedirectToAction("Index","Login");
-        }
-        public class Db
+    //public ActionResult Logout()
+    //    {
+    //        Session.Abandon();
+    //        return RedirectToAction("Index","Login");
+    //    }
+    
+    public class Db
         {
            
             public static SqlConnection CreateConnection()//64814
             {
-                SqlConnection con = new SqlConnection("Data Source =192.168.56.1,64814;Initial Catalog =Carts;User ID =zyxa9527;Password = a3727240");
+                SqlConnection con = new SqlConnection("Data Source =192.168.56.1,64814;Initial Catalog =Carts;User ID =zyxa9527;Password =a3727240");
                 return con;
             }
            
@@ -91,7 +117,6 @@ namespace WebApplication9.Controllers
                 }
                 
             }
-        }
-
     }
+
 }
