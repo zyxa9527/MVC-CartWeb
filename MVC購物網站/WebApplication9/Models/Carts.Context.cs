@@ -7,28 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication9.Models
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
+public partial class CartsEntities : DbContext
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
-    public partial class CartsEntities : DbContext
+    public CartsEntities()
+        : base("name=CartsEntities")
     {
-        public CartsEntities()
-            : base("name=CartsEntities")
-        {
-        }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<ProductComment> ProductComments { get; set; }
-        public virtual DbSet<User> Users { get; set; }
     }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        throw new UnintentionalCodeFirstException();
+    }
+
+    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Order> Orders { get; set; }
+    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+    public virtual DbSet<ProductComment> ProductComments { get; set; }
+    public virtual DbSet<User> Users { get; set; }
 }

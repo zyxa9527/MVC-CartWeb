@@ -7,3 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
+public partial class Order
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Order()
+    {
+        this.OrderDetails = new HashSet<OrderDetail>();
+    }
+
+    public int Id { get; set; }
+    public string UserId { get; set; }
+    public string RecieverName { get; set; }
+    public string RecieverPhone { get; set; }
+    public string RecieverAddress { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+}
+
+public partial class OrderDetail
+{
+    public int Id { get; set; }
+    public int OrderId { get; set; }
+    public string Name { get; set; }
+    public string Price { get; set; }
+    public string Quantity { get; set; }
+
+    public virtual Order Order { get; set; }
+}
+
+public partial class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public string CategoryId { get; set; }
+    public int Price { get; set; }
+    public System.DateTime PublishDate { get; set; }
+    public bool Status { get; set; }
+    public string DefaultImageId { get; set; }
+    public int Quantity { get; set; }
+    public string DefaultImageURL { get; set; }
+}
+
+public partial class ProductComment
+{
+    public int Id { get; set; }
+    public string UserId { get; set; }
+    public string Content { get; set; }
+    public string CreateDate { get; set; }
+    public string ProductId { get; set; }
+}
+
+public partial class User
+{
+    public string username { get; set; }
+    public string userpassword { get; set; }
+}

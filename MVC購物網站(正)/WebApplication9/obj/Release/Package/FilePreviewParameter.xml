@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mvc購物網站" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\yu65415\.YUSCO\\source\\repos\\WebApplication9\\WebApplication9\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\yu65415\.YUSCO\\source\\repos\\WebApplication9\\WebApplication9\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="CartsEntities-Web.config Connection String" description="" value="metadata=res://*/Models.Carts.csdl|res://*/Models.Carts.ssdl|res://*/Models.Carts.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\;initial catalog=Carts;User ID=zyxa9527;Password=a3727240;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yu65415\.YUSCO\\source\\repos\\WebApplication9\\WebApplication9\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CartsEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection 應用程式在 web.config 中用來存取資料庫的連接字串。" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-Carts-20141001111852.mdf;Initial Catalog=aspnet-Carts-20141001111852;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yu65415\.YUSCO\\source\\repos\\WebApplication9\\WebApplication9\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Carts-Web.config Connection String" description="Carts 應用程式在 web.config 中用來存取資料庫的連接字串。" value="data source=.\;initial catalog=Carts;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yu65415\.YUSCO\\source\\repos\\WebApplication9\\WebApplication9\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Carts']/@connectionString" />
+  </parameter>
+  <parameter name="Carts_Entities-Web.config Connection String" description="Carts_Entities 應用程式在 web.config 中用來存取資料庫的連接字串。" value="metadata=res://*/Models.Carts.csdl|res://*/Models.Carts.ssdl|res://*/Models.Carts.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\;initial catalog=Carts;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yu65415\.YUSCO\\source\\repos\\WebApplication9\\WebApplication9\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Carts_Entities']/@connectionString" />
+  </parameter>
+</parameters>
