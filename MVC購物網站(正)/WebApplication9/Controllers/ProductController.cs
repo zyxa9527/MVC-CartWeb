@@ -16,7 +16,7 @@ namespace WebApplication9.Controllers
         {
             
             //宣告回傳商品列表result
-            List<Models.Product> result = new List<Models.Product>();
+            List<Models.Products> result = new List<Models.Products>();
 
             //接收轉導的成功訊息
             ViewBag.ResultMessage = TempData["ResultMessage"];
@@ -48,7 +48,7 @@ namespace WebApplication9.Controllers
             return View();
         }
         [HttpPost] //指定只有使用POST方法才可進入
-        public ActionResult Create(Models.Product postback)
+        public ActionResult Create(Models.Products postback)
         {
             if (ModelState.IsValid) //如果資料驗證成功
             {
@@ -75,7 +75,7 @@ namespace WebApplication9.Controllers
             {
                 //抓取Product.Id等於輸入id的資料
                 var result = (from s in db.Products where s.Id == id select s).FirstOrDefault();
-                if (result != default(Models.Product)) //判斷此id是否有資料
+                if (result != default(Models.Products)) //判斷此id是否有資料
                 {
                     return View(result); //如果有回傳編輯商品頁面
                 }
@@ -87,7 +87,7 @@ namespace WebApplication9.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit(Models.Product postback)
+        public ActionResult Edit(Models.Products postback)
         {
             if (this.ModelState.IsValid) //判斷使用者輸入資料是否正確
             {
@@ -123,7 +123,7 @@ namespace WebApplication9.Controllers
             {
                 //抓取Product.Id等於輸入id的資料
                 var result = (from s in db.Products where s.Id == id select s).FirstOrDefault();
-                if (result != default(Models.Product)) //判斷此id是否有資料
+                if (result != default(Models.Products)) //判斷此id是否有資料
                 {
                     db.Products.Remove(result);
 

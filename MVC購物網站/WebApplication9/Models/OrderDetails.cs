@@ -12,17 +12,14 @@ namespace WebApplication9.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class OrderDetails
     {
         public int Id { get; set; }
+        public int OrderId { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public string CategoryId { get; set; }
-        public int Price { get; set; }
-        public System.DateTime PublishDate { get; set; }
-        public bool Status { get; set; }
-        public string DefaultImageId { get; set; }
-        public int Quantity { get; set; }
-        public string DefaultImageURL { get; set; }
+        public string Price { get; set; }
+        public string Quantity { get; set; }
+    
+        public virtual Orders Orders { get; set; }
     }
 }

@@ -1,11 +1,11 @@
-﻿@model WebApplication9.Models.Product
+﻿@model WebApplication9.Models.Products
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 
-    var commentList = new List<WebApplication9.Models.ProductComment>();
+    var commentList = new List<WebApplication9.Models.ProductComments>();
     using (WebApplication9.Models.CartsEntities db = new WebApplication9.Models.CartsEntities())
     {
         commentList = (from s in db.ProductComments

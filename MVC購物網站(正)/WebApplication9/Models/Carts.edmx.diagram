@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="17b66ca4985a49a0ac8f1cc34edaa67f" Name="Diagram1" >
-        <EntityTypeShape EntityType="CartsModel.Product" PointX="2" PointY="1.75" Width="1.5" />
-        <EntityTypeShape EntityType="CartsModel.Order" Width="1.5" PointX="5.75" PointY="2.75" />
-        <EntityTypeShape EntityType="CartsModel.OrderDetail" Width="1.5" PointX="8.5" PointY="2.375" />
-        <AssociationConnector Association="CartsModel.OrderOrderDetail" />
-        <EntityTypeShape EntityType="CartsModel.ProductComment" Width="1.5" PointX="3.875" PointY="2.25" />
-        <EntityTypeShape EntityType="CartsModel.Village" Width="1.5" PointX="0.75" PointY="5.75" />
+      <Diagram DiagramId="90cdf10e937c494797f124b6a82eec10" Name="Diagram1">
+        <EntityTypeShape EntityType="CartsModel.OrderDetails" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CartsModel.Orders" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CartsModel.ProductComments" Width="1.5" PointX="6.625" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CartsModel.Products" Width="1.5" PointX="2.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CartsModel.User" Width="1.5" PointX="4.75" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="CartsModel.FK_OrderOrderDetail" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

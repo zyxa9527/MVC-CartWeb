@@ -157,20 +157,22 @@
       <DependentUpon>Carts.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Operation.cs" />
-    <Compile Include="Models\Order.cs">
+    <Compile Include="Models\OrderDetails.cs">
       <DependentUpon>Carts.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OrderDetail.cs">
+    <Compile Include="Models\Orders.cs">
       <DependentUpon>Carts.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product.cs">
+    <Compile Include="Models\ProductComments.cs">
       <DependentUpon>Carts.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductComment.cs">
+    <Compile Include="Models\Products.cs">
       <DependentUpon>Carts.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ship.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Carts.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,7 +189,6 @@
       <DependentUpon>Carts.edmx</DependentUpon>
       <LastGenOutput>Carts.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Carts.edmx.sql" />
     <Content Include="Models\Carts.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Carts.edmx</DependentUpon>

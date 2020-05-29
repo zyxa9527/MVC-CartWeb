@@ -35,7 +35,7 @@ namespace WebApplication9.Controllers
                               where s.Id == id
                               select s).FirstOrDefault();
 
-                if (result == default(Models.Product))
+                if (result == default(Models.Products))
                 {
                     return RedirectToAction("Index");
                 }
@@ -54,7 +54,7 @@ namespace WebApplication9.Controllers
 
             var currentDateTime = DateTime.Now;
 
-            var comment = new Models.ProductComment()
+            var comment = new Models.ProductComments()
             {
                 ProductId = id.ToString(),
                 Content = Content,

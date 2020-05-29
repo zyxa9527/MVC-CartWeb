@@ -23,11 +23,11 @@ namespace WebApplication9.Controllers
             
             try
             {
-                if (Db.CheckUserData(postback.Name, postback.Password))
+                if (postback.username != ""&& postback.userpassword !="")
                 {
-                    Session["LoginName"] = postback.Name;
-                    Session["LoginPassword"] = postback.Password;
-                    TempData["ResultMessage"] = String.Format("{0}登入成功!!" , postback.Name);
+                    Session["LoginName"] = postback.username;
+                    Session["LoginPassword"] = postback.userpassword;
+                    TempData["ResultMessage"] = String.Format("{0}登入成功!!" , postback.username);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -54,9 +54,10 @@ namespace WebApplication9.Controllers
         public class Db
         {
            
-            public static SqlConnection CreateConnection()//192.168.56.1,64814  User ID =zyxa9527;Password = a3727240;
+            public static SqlConnection CreateConnection()//172.16.5.43  User ID =zyxa9527;Password = a3727240;
             {
-                SqlConnection con = new SqlConnection("Data Source =172.16.5.43;Initial Catalog =Carts;User ID =zyxa9527;Password = a3727240;");
+                SqlConnection con = new SqlConnection("Data Source =f231055.database.windows.net;Initial Catalog =Carts;User ID =zyxa95277;Password = Aa3727240;");
+                //SqlConnection con = new SqlConnection("Server=tcp:f231055.database.windows.net,1433;Initial Catalog=Carts;Persist Security Info=False;User ID=zyxa95277;Password=Aa3727240;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                 return con;
             }
            

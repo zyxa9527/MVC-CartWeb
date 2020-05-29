@@ -52,7 +52,7 @@ namespace WebApplication9.Models
                     var product = (from s in db.Products
                                    where s.Id == ProductId
                                    select s).FirstOrDefault();
-                    if (product != default(Models.Product))
+                    if (product != default(Models.Products))
                     {
                         this.AddProduct(product);
                     }
@@ -64,7 +64,7 @@ namespace WebApplication9.Models
             }
             return true;
         }
-        private bool AddProduct(Product product)
+        private bool AddProduct(Products product)
         {
             //將Product轉為CartItem
             var cartItem = new Models.CartItem()
@@ -107,12 +107,12 @@ namespace WebApplication9.Models
             return true;
         }
 
-        public List<Models.OrderDetail> ToOrderDetailList(int orderId)
+        public List<Models.OrderDetails> ToOrderDetailList(int orderId)
         {
-            var result = new List<Models.OrderDetail>();
+            var result = new List<Models.OrderDetails>();
             foreach (var cartItem in this.cartItems)
             {
-                result.Add(new Models.OrderDetail()
+                result.Add(new Models.OrderDetails()
                 {
                     Name = cartItem.Name,
                     Price = string.Format("{0}",cartItem.Price),

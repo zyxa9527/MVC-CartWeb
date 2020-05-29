@@ -36,7 +36,7 @@ namespace WebApplication9.Controllers
                 using (Models.CartsEntities db = new Models.CartsEntities())
                 {
                     //建立Order物件
-                    var order = new Models.Order()
+                    var order = new Models.Orders()
                     {
                         UserId = userId,
                         RecieverName = postback.RecieverName,

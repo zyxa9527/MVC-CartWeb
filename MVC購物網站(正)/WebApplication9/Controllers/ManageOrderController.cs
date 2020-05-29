@@ -70,7 +70,7 @@ namespace WebApplication9.Controllers
             }
             else
             {   //回傳 空結果 至Index()的View
-                return View("Index", new List<Models.Order>());
+                return View("Index", new List<Models.Orders>());
             }
 
         }
